@@ -1,4 +1,4 @@
-## Book Project
+Book Project
 
 1. MySQL Database Setting (도서정보)
 
@@ -134,6 +134,11 @@
        ```
        >> mysql -u android -p library < _BookTableDump.sql
        ```
+
+     
+
+   - 강사용 PC ip  : 70.12.115.80
+
      
 
    - Transaction 
