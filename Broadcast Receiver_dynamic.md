@@ -8,6 +8,7 @@
 
 
 
+
 - BroadcastTestActivity
 
   - 버튼을 클릭하면 Broadcast를 발생시킨다.
@@ -31,6 +32,7 @@
         });
     ```
 
+    
     
 
   - AndroidManifest.xml에 Action과 Category를 등록한다.
@@ -88,6 +90,7 @@
 
     
 
+
 - Broadcast Receiver를 등록/해제 
 
   - BroadcastTestActivity
@@ -102,6 +105,8 @@
         IntentFilter filter = new IntentFilter();
         ```
 
+
+        
         
 
       - 생성한 Intent Filter에 Action을 설정한다. 
@@ -114,6 +119,7 @@
         filter.addAction("MY_BROADCAST_DYNAMIC");
         ```
 
+        
         
 
       - Broadcast Receiver 객체를 생성한다. 
@@ -140,6 +146,7 @@
             };
             ```
 
+
         
 
       - Broadcast Receiver를 생성한 이후,  Activity에 등록한다.
@@ -154,6 +161,7 @@
 
       
 
+
       
 
     - ### Broadcast Receiver 등록 해제하기
@@ -167,5 +175,6 @@
         }
         ```
 
+        
         
 
