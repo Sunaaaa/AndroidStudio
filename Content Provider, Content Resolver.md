@@ -110,7 +110,7 @@
 
         ```mysql
         CREATE TABLE IF NOT EXISTS Member (
-        	userName TEXT,
+        	  userName TEXT,
             userAge INTEGER,
         );
         ```
