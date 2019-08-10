@@ -75,7 +75,7 @@
           public MySQLiteHelper(Context context) {
               
               // 상위 클래스의 생성자 호출
-              			// 데이터 베이스 이름
+              // 데이터 베이스 이름
               super(context, "Member.db", null, 1);
           }
       
