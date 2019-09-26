@@ -150,31 +150,24 @@ Book Project
        - 예 > 은행의 이체업무는 Transaction으로 설정할 수 있어요.
        - << 이체 Transaction >>
          1. A라는 사람의 계좌에 돈이 충분한지 확인해요. selection 수행
-         
          2. A라는 사람의 계좌에서 2000원을 빼요. update 수행
-         
+
        3. B라는 사람의 계좌에서 잔액을 알아내요. selection 수행
-         
+
        4. 알아낸 잔액 + 2000원 한 금액을 저장해요. update 수행
-         
+
           
-     
+
    - Why Transaction을 설정할까요?
-     
+
      - DBMS에서 ACID라고 불리는 기능을 제공받기 위해서 설정
-     
        - Atomicity (원자성) : Transaction으로 지정된 작업은 모두 성공하거나 하나도 하지 않은 상태로 관리되어야 한다.
-     
        - Consistency (일치성) : Transaction이 종료된 후에 데이터의 일관성이 유지되어야 한다. 
-     
        - Isolation (독립성) : Transaction이 걸려있는 Resource에 대해서 Transaction이 종료될 때까지 데이터에 대한 접근을 제한
-     
          - 데이터를 read하는 것은 가능, CRUD는 불가 
-     
            - A와 B의 Transaction이 끝날 때까지 A와 B의 Transaction을 막겠다.
-     
          - Durability (영속성) : Transaction의 처리 결과는 2차 저장소에 안전하게 저장되는 것을 보장하는 기능 
-     
+
      
 
    
@@ -184,14 +177,12 @@ Book Project
    - 입력 :  책 제목의 Keyword
 
      출력 :  책 제목 리스트  (JSON)
-     
+
      
 
    1. Eclipse의 설정
 
       - Workspace에 대한 text file Encoding => utf-8로 변경 
-
-        ![123](C:\Users\student\Desktop\123.PNG)
 
       
 
@@ -199,7 +190,7 @@ Book Project
 
       - 이클립스에 Tomcat 서버를 연결한다. 
 
-        ![1564638169409](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1564638169409.png)
+        ![1564638169409](https://user-images.githubusercontent.com/39547788/65685424-e56a9c00-e09c-11e9-88b6-1c687bb313c1.png)
 
         
 
@@ -209,7 +200,7 @@ Book Project
 
         ==> UTF-8로 해당 데이터 연결 통로를 Encoding으로 변경 : 클라이언트가 보내는 한글 데이터를 제대로 받을 수 있다. 
 
-        ![1564638419166](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1564638419166.png)
+        ![1564638419166](https://user-images.githubusercontent.com/39547788/65685423-e56a9c00-e09c-11e9-990e-1e0bdc6ee4ab.png)
 
       
 
@@ -217,13 +208,13 @@ Book Project
 
       - Project Name : BookSearchForAndroid
 
-        ![1564639777141](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1564639777141.png)
+        ![1564639777141](https://user-images.githubusercontent.com/39547788/65685422-e56a9c00-e09c-11e9-9017-22b9c4d0ff17.png)
 
         
 
       - Context Root : bookSearch
 
-        ![1564639826329](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1564639826329.png)
+        ![1564639826329](https://user-images.githubusercontent.com/39547788/65685420-e4d20580-e09c-11e9-8236-5b2f3ac47f25.png)
 
         
 
@@ -236,38 +227,38 @@ Book Project
           : Client의 입력을 받고 출력을 내보내는 작업  (처리는 다른 곳에서)
 
           : 로직을 처리할 때는 Service를 호출
+
+   4. Servlet 생성
+
+      - URL Mapping : /searchTitle
+
+      ![1564640589460](https://user-images.githubusercontent.com/39547788/65685419-e4d20580-e09c-11e9-9d5b-853b233bf667.png)
+
+      ![1564640687359](https://user-images.githubusercontent.com/39547788/65685431-e69bc900-e09c-11e9-8069-798279951057.png)
+
       
-     1. Servlet 생성
-             - URL Mapping : /searchTitle
 
-          ![1564640589460](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1564640589460.png)
+      - Service
 
-          ![1564640687359](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1564640687359.png)
+        : 실제 Business Logic을 담당 (Transaction을 처리, )
 
-          
+        : 입력으로 프로그램의 로직을 처리한다. 
 
-        - Service
+        ![1564641061777](https://user-images.githubusercontent.com/39547788/65685430-e69bc900-e09c-11e9-8e67-d94725927c68.png)
 
-          : 실제 Business Logic을 담당 (Transaction을 처리, )
-
-          : 입력으로 프로그램의 로직을 처리한다. 
-
-          ![1564641061777](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1564641061777.png)
-
-          
-
-        - DAO (Data Access Object)
-
-          : 데이터 베이스 관련 작업을 담당 
-
-          ![1564641819856](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1564641819856.png)
-
-          
-
-        - 데이터 전달에 대한 객체
         
-          - DTO(Data Transfer Object), VO(Value Object), DO(Domain Object), Entity
 
+      - DAO (Data Access Object)
+
+        : 데이터 베이스 관련 작업을 담당 
+
+        ![1564641819856](https://user-images.githubusercontent.com/39547788/65685429-e6033280-e09c-11e9-901f-4821c7513462.png)
+
+        
+
+      - 데이터 전달에 대한 객체
+
+        - DTO(Data Transfer Object), VO(Value Object), DO(Domain Object), Entity
 
 
 
@@ -344,7 +335,7 @@ Book Project
 
         - 프로젝트명 -> WebContent -> META-INF -> context.xml
 
-          ![1564931856744](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1564931856744.png)
+          ![1564931856744](https://user-images.githubusercontent.com/39547788/65685426-e6033280-e09c-11e9-88ed-3403c772842c.png)
 
           - type : 웹에서 해당 Resource를 사용할 때, "javax.sql.DataSource"로 리턴된다.
 
@@ -360,45 +351,45 @@ Book Project
 
             
 
-      -  DBTemplate Class를 구현 
+      - DBTemplate Class를 구현 
 
         - Connection Pool을 만들고, con을 가져온다. 또 Transaction을 시작한다. 
-      
-        ![1565001397904](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1565001397904.png)
-      
+
+          ![1565001397904](https://user-images.githubusercontent.com/39547788/65685425-e56a9c00-e09c-11e9-9cec-eb264f154ab8.png)
+
         
-    
+
       - BookDAO ( Java 코드 )
-    
+
         ```java
-      // 2. Connection 단계 
+        // 2. Connection 단계 
         Connection con = common.DBTemplate.getConnection();
         System.out.println("연결 성공");
         ```
-  
+
     
-  
+
 - DAO 코드 내 용어 
-  
+
   - #### Connection
-  
+
     - 네트워크 상의 연결 자체
       - 자바 프로그램과 데이터베이스 사이의 길
     - 보통 Connection 하나당 Transaction 하나를 관리한다. 
       - DriverManager.getConnection() : 실제 자바 프로그램과 데이터 베이스를 네트워크 상에서 연결
         - 연결에 성공하면 데이터 베이스와 연결 상태를 Connection 객체로 표현하여 반환한다.
-      - close() 에 의해 Connection을 반납한다.
-  
-      
-  
-    - #### Statement
-  
-      - SQL 문을 보내고, 결과 값을 받는 역할을 수행하는 객체
-  
-      
+    - close() 에 의해 Connection을 반납한다.
+
     
+
+  - #### Statement
+
+    - SQL 문을 보내고, 결과 값을 받는 역할을 수행하는 객체
+
+      
+
     - #### DataSource
-    
+
       - javax.sql.DataSource 인터페이스
       - ConnectioPool을 관리하는 객체로, 이 객체를 통해 Connection을 얻고 반납하는 등의 작업을 구현해야한다.
 
@@ -557,7 +548,7 @@ Book Project
 
      - POJO
 
-        :  순수하게 Setter, Getter Method로 이뤄진 Value Object 성의 Bean
+       :  순수하게 Setter, Getter Method로 이뤄진 Value Object 성의 Bean
 
        ```java
        public class Student{
@@ -584,18 +575,16 @@ Book Project
 - 3가지 라이브러리 선택 -> 우클릭 -> Add as Library ( : Library로 포함)
 
   - jackson-annotations-2.8.1.jar
-
   - jackson-core-2.8.1.jar
-
   - jackson-databind-2.8.1.jar
 
 
 
-![1564712067713](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1564712067713.png)
+![1564712067713](https://user-images.githubusercontent.com/39547788/65685428-e6033280-e09c-11e9-954f-e6df0476c40f.png)
 
 
 
-![1564712091607](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1564712091607.png)
+![1564712091607](https://user-images.githubusercontent.com/39547788/65685427-e6033280-e09c-11e9-9b4f-29f5248be989.png)
 
 
 
@@ -746,5 +735,5 @@ Book Project
   }
   
   ```
-  
+
   
